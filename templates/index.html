@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0F2B46">
+  <title>Travel AGENT AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <svg class="hero-art" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FFD9A0" stop-opacity="0.65"/>
+          <stop offset="100%" stop-color="#FFD9A0" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <circle cx="1010" cy="330" r="280" fill="url(#sun-glow)"/>
+      <circle cx="1010" cy="330" r="62" fill="#FFE2B3"/>
+
+      <path class="mtn mtn-far" d="M0 370 L170 255 L300 335 L470 215 L640 345 L800 275 L980 370 L1150 265 L1300 345 L1440 295 V560 H0Z"/>
+      <path class="mtn mtn-mid" d="M0 430 L140 345 L280 415 L460 325 L620 425 L820 335 L1000 435 L1180 355 L1340 425 L1440 385 V560 H0Z"/>
+      <path class="mtn mtn-near" d="M0 480 L200 400 L360 470 L560 390 L760 475 L960 405 L1160 480 L1320 420 L1440 460 V560 H0Z"/>
+      <path class="mtn-front" d="M0 515 C240 485 420 535 700 515 C980 495 1200 535 1440 505 V560 H0Z"/>
+
+      <path class="flight-path" d="M560 170 C720 40 940 30 1090 120 S1290 210 1420 110"/>
+      <polygon class="plane" points="20,0 -13,-11 -6,0 -13,11"/>
+    </svg>
+
+    <div class="hero-inner">
+      <a class="brand" href="#">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9.5"/>
+          <path d="M15.5 8.5l-2 5-5 2 2-5z" fill="currentColor" stroke="none"/>
+        </svg>
+        <span>Travel Planner AI</span>
+      </a>
+
+      <h1>Where to next?</h1>
+      <p class="lede">Describe the trip you have in mind. We'll look up flights, suggest places to stay and lay out your days.</p>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="pass-wrap">
+      <form id="prompt-form" class="pass">
+        <div class="pass-main">
+          <label for="prompt">What trip are you planning?</label>
+          <textarea
+            id="prompt"
+            name="prompt"
+            rows="4"
+            placeholder="e.g. 5 days in Lisbon for two, mid-range budget, leaving in March"
+            required
+          ></textarea>
+          <p class="hint">Add dates, budget and who's travelling for a better plan.</p>
+        </div>
+
+        <div class="pass-stub">
+          <button type="submit" id="submit-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21.5 2.5L2 10.2l6.3 2.4 2.4 6.3zM9 12.6l8.6-7.1-6.6 9.2z"/>
+            </svg>
+            <span>Plan my trip</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <section class="itinerary" aria-labelledby="results-title">
+      <h2 id="results-title">Your itinerary</h2>
+
+      <div id="results" class="results" aria-live="polite">
+        <div class="empty">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/>
+            <circle cx="12" cy="9.5" r="2.5"/>
+          </svg>
+          <p>Your trip plan will appear here.</p>
+          <small>Flights, places to stay and a day-by-day plan.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Plans are suggestions. Check prices and availability before you book.</p>
+  </footer>
+
+  <script src="../static/script.js"></script>
+</body>
+</html>

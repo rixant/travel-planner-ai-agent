@@ -50,8 +50,7 @@ if not OLLAMA_API_KEY:
 os.environ["OLLAMA_API_KEY"]
 
 llm = ChatOllama(
-    model="llama3.2",
-    temperature=0.2,
+    model="llama3.2"
 )
 
 class TravelState(TypedDict):
